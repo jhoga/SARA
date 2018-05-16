@@ -1,0 +1,59 @@
+﻿<Window x:Class="SaraD2.FacCat"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SaraD2"
+        mc:Ignorable="d"
+        Title="FacCat" Height="327" Width="702" Closing="Window_Closing">
+    <StackPanel Margin="0,0,0,0">
+        <StackPanel.Background>
+            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                <GradientStop Color="#FF407A8B" Offset="0"/>
+                <GradientStop Color="White" Offset="1"/>
+            </LinearGradientBrush>
+        </StackPanel.Background>
+        <StackPanel Orientation="Horizontal">
+            <DataGrid x:Name="dgCat" ItemsSource="{Binding}" AutoGenerateColumns="False" Height="279" Width="316" Margin="10" AlternatingRowBackground="LightBlue" SelectionChanged="dgCat_SelectionChanged">
+                <DataGrid.Resources>
+                    <Style TargetType="{x:Type DataGridColumnHeader}">
+                        <Setter Property="Background" Value="SteelBlue" />
+                        <Setter Property="Foreground" Value="White" />
+                    </Style>
+                </DataGrid.Resources>
+                <DataGrid.Columns>
+                    <DataGridTextColumn  Binding="{Binding RID}" Width="25" />
+                    <DataGridTextColumn  Binding="{Binding Description}" Width="155"/>
+                    <DataGridTextColumn  Binding="{Binding SubTable}" Width="155"/>
+                </DataGrid.Columns>
+            </DataGrid>
+            <DataGrid x:Name="dgSubCat" ItemsSource="{Binding}" AutoGenerateColumns="True" Height="279" Width="192" Margin="10" AlternatingRowBackground="LightBlue"/>
+            <StackPanel Margin="5" Width="132" Height="180">
+                <Button x:Name="btUp" Content="Update Category" Height="32" Click="btUp_Click"  Margin="5" Foreground="AntiqueWhite"  >
+                    <Button.Effect>
+                        <DropShadowEffect/>
+                    </Button.Effect>
+                    <Button.Background>
+                        <LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
+                            <GradientStop Color="#FF334661" Offset="0.549"/>
+                            <GradientStop Color="#FFCBEEEB"/>
+                            <GradientStop Color="#FF478187" Offset="0.282"/>
+                        </LinearGradientBrush>
+                    </Button.Background>
+                </Button>
+                <Button x:Name="btSub" Content="Update Sub-Category" Height="32" Click="btSub_Click" Margin="5" Foreground="AntiqueWhite" >
+                    <Button.Effect>
+                        <DropShadowEffect/>
+                    </Button.Effect>
+                    <Button.Background>
+                        <LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
+                            <GradientStop Color="#FF334661" Offset="0.549"/>
+                            <GradientStop Color="#FFCBEEEB"/>
+                            <GradientStop Color="#FF478187" Offset="0.282"/>
+                        </LinearGradientBrush>
+                    </Button.Background>
+                </Button>
+            </StackPanel>
+        </StackPanel>
+    </StackPanel>
+</Window>

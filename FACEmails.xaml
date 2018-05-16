@@ -1,0 +1,41 @@
+﻿<Window x:Class="SaraD2.FACEmails"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SaraD2"
+        mc:Ignorable="d"
+        Title="FACEmails" Height="327" Width="722.385">
+
+    <StackPanel Orientation="Vertical">
+        <StackPanel.Background>
+            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                <GradientStop Color="#FF407A8B" Offset="0"/>
+                <GradientStop Color="White" Offset="1"/>
+            </LinearGradientBrush>
+        </StackPanel.Background>
+        <Button x:Name="upEmail" Content="Update" Margin="20,10,630,0" Foreground="AntiqueWhite" Click="upEmail_Click">
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
+                    <GradientStop Color="#FF334661" Offset="0.549"/>
+                    <GradientStop Color="#FFCBEEEB"/>
+                    <GradientStop Color="#FF478187" Offset="0.282"/>
+                </LinearGradientBrush>
+            </Button.Background>
+        </Button>
+        <DataGrid x:Name="EmailDG" Width="691" Margin="12,10,11,10" ItemsSource="{Binding}" AlternatingRowBackground="AliceBlue" AutoGenerateColumns="False" BorderBrush="#FF6CCFB4" Height="248">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="RID" Binding="{Binding RID}" Width="55" />
+                <DataGridTextColumn Header="Tech" Binding="{Binding Tech}" Width="80"/>
+                <DataGridTextColumn Header="Email" Binding="{Binding Email}" Width="150"/>
+                <DataGridCheckBoxColumn Header="Electrical" Binding="{Binding ITc1}" Width="60" />
+                <DataGridCheckBoxColumn Header="Exterminator" Binding="{Binding ITc2}" Width="80"  />
+                <DataGridCheckBoxColumn Header="Plumbing" Binding="{Binding ITc3}" Width="65" />
+                <DataGridCheckBoxColumn Header="Roofing" Binding="{Binding ITc4}" Width="55" />
+                <DataGridCheckBoxColumn Header="DSI" Binding="{Binding ITc5}" Width="45" />
+                <DataGridCheckBoxColumn Header="Events" Binding="{Binding ITc6}" Width="55" />
+             
+            </DataGrid.Columns>
+        </DataGrid>
+    </StackPanel>
+</Window>

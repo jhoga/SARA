@@ -1,0 +1,122 @@
+﻿<Window x:Class="SaraD2.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SaraD2"
+        mc:Ignorable="d"
+        Title="Sara" Height="350" Width="407.447">
+    <Window.Resources>
+        <Style x:Key="wpfStyle1" TargetType="{x:Type TextBox}">
+            <Setter Property="FontFamily" Value="Arial Narrow"/>
+            <Setter Property="FontSize" Value="18"/>
+            <Setter Property="Foreground" Value="Black" />
+            <Setter Property="Height" Value="24" />
+        </Style>
+        <Style x:Key="wpfStyle2" TargetType="{x:Type Label}">
+            <Setter Property="FontFamily" Value="Arial Narrow"/>
+            <Setter Property="FontSize" Value="18"/>
+            <Setter Property="Height" Value="30" />
+            <Setter Property="Foreground" Value="DarkBlue" />
+        </Style>
+
+        <Style x:Key="wpfStyle3" TargetType="{x:Type ComboBox}">
+            <Setter Property="FontFamily" Value="Arial Narrow"/>
+            <Setter Property="FontSize" Value="18"/>
+            <Setter Property="Foreground" Value="Black" />
+        </Style>
+        <Style x:Key="wpfStyle4" TargetType="{x:Type Button}">
+            <Setter Property="FontFamily" Value="Arial Narrow"/>
+            <Setter Property="FontSize" Value="16"/>
+            <Setter Property="Height" Value="30" />
+            <Setter Property="Foreground" Value="AntiqueWhite" />
+        </Style>
+
+    </Window.Resources>
+    <StackPanel Background="#FF8FB6B8">
+        <Label FontSize="16" Content="Service Application Reporting Assistant" Style="{StaticResource wpfStyle2}" HorizontalAlignment="Left" VerticalAlignment="Top" Width="327" RenderTransformOrigin="0.457,-0.266" Height="29"  FontWeight="Bold" FontFamily="Arial" />
+        <StackPanel Orientation="Horizontal">
+            <StackPanel Height="267" Width="264" Margin="5" >
+                <StackPanel.Background>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="#FF407A8B" Offset="0"/>
+                        <GradientStop Color="White" Offset="1"/>
+                    </LinearGradientBrush>
+                </StackPanel.Background>
+                <TextBlock x:Name="tbDesc" Text="Hover mouse over button to see a discriptions of when to choose each button." TextWrapping="Wrap" Margin="5" Height="156"/>
+                <Image Height="97" HorizontalAlignment="Left"  x:Name="Image1" Stretch="Fill" VerticalAlignment="Top" Width="146" Source="Images/newcs.png" Margin="10,1,0,0"/>
+            </StackPanel>
+            <StackPanel Width="112" Height="265" >
+                <StackPanel.Background>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="Black" Offset="0"/>
+                        <GradientStop Color="#FF1E403D" Offset="1"/>
+                    </LinearGradientBrush>
+                </StackPanel.Background>
+                <Button x:Name="btIT"  Height="24" Content="InfoTech" Style="{StaticResource wpfStyle4}"  Margin="5" MouseEnter="btIT_MouseEnter" Click="btIT_Click">
+                    <Button.Background>
+                        <LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
+                            <GradientStop Color="#FF334661" Offset="0.549"/>
+                            <GradientStop Color="#FFCBEEEB"/>
+                            <GradientStop Color="#FF478187" Offset="0.282"/>
+                        </LinearGradientBrush>
+                    </Button.Background>
+                </Button>
+                <Button x:Name="btFacilites" Height="24" Content="Facilities" Style="{StaticResource wpfStyle4}"  Margin="5" MouseEnter="btFacilites_MouseEnter" Click="btFacilites_Click"  >
+                    <Button.Background>
+                        <LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
+                            <GradientStop Color="#FF334661" Offset="0.549"/>
+                            <GradientStop Color="#FFCBEEEB"/>
+                            <GradientStop Color="#FF478187" Offset="0.282"/>
+                        </LinearGradientBrush>
+                    </Button.Background>
+                </Button>
+                <Button x:Name="btSig" Height="24" Content="Signals/Lights" Style="{StaticResource wpfStyle4}"  Margin="5" MouseEnter="btSig_MouseEnter" Click="btSig_Click">
+                    <Button.Background>
+                        <LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
+                            <GradientStop Color="#FF334661" Offset="0.549"/>
+                            <GradientStop Color="#FFCBEEEB"/>
+                            <GradientStop Color="#FF478187" Offset="0.282"/>
+                        </LinearGradientBrush>
+                    </Button.Background>
+                </Button>
+                <Button x:Name="btSM" Height="24" Content="Signs/Markings" Style="{StaticResource wpfStyle4}"  Margin="5" MouseEnter="btSM_MouseEnter" Click="btSM_Click">
+                    <Button.Background>
+                        <LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
+                            <GradientStop Color="#FF334661" Offset="0.549"/>
+                            <GradientStop Color="#FFCBEEEB"/>
+                            <GradientStop Color="#FF478187" Offset="0.282"/>
+                        </LinearGradientBrush>
+                    </Button.Background>
+                </Button>
+                <Button x:Name="btSW" Height="24" Content="Storm Water" Style="{StaticResource wpfStyle4}"  Margin="5" MouseEnter="btSW_MouseEnter" Visibility="Visible" Click="btSW_Click">
+                    <Button.Background>
+                        <LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
+                            <GradientStop Color="#FF334661" Offset="0.549"/>
+                            <GradientStop Color="#FFCBEEEB"/>
+                            <GradientStop Color="#FF478187" Offset="0.282"/>
+                        </LinearGradientBrush>
+                    </Button.Background>
+                </Button>
+                <Button x:Name="btMedia" Height="24" Content="Video Request" Style="{StaticResource wpfStyle4}"  Margin="5" MouseEnter="btMedia_MouseEnter" Visibility="Visible" Click="btMedia_Click">
+                    <Button.Background>
+                        <LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
+                            <GradientStop Color="#FF334661" Offset="0.549"/>
+                            <GradientStop Color="#FFCBEEEB"/>
+                            <GradientStop Color="#FF478187" Offset="0.282"/>
+                        </LinearGradientBrush>
+                    </Button.Background>
+                </Button>
+                <Button x:Name="btFE" Height="24" Content="Fire Equipment" Style="{StaticResource wpfStyle4}"  Margin="5" MouseEnter="btFE_MouseEnter" Visibility="Hidden" Click="btFE_Click">
+                    <Button.Background>
+                        <LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
+                            <GradientStop Color="#FF334661" Offset="0.549"/>
+                            <GradientStop Color="#FFCBEEEB"/>
+                            <GradientStop Color="#FF478187" Offset="0.282"/>
+                        </LinearGradientBrush>
+                    </Button.Background>
+                </Button>
+            </StackPanel>
+        </StackPanel>
+    </StackPanel>
+</Window>

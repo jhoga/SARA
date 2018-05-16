@@ -1,0 +1,136 @@
+﻿<Window x:Class="SaraD2.Signals"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SaraD2"
+        mc:Ignorable="d"
+        Title="Signals" Height="492" Width="595.409">
+    <Window.Resources>
+        <Style x:Key="wpfStyle1" TargetType="{x:Type TextBox}">
+            <Setter Property="FontFamily" Value="Arial Narrow"/>
+            <Setter Property="FontSize" Value="18"/>
+            <Setter Property="Foreground" Value="Black" />
+            <Setter Property="Height" Value="30" />
+            <Setter Property="Background" Value="#FFE6E7EC" />
+        </Style>
+        <Style x:Key="wpfStyle2" TargetType="{x:Type Label}">
+            <Setter Property="FontFamily" Value="Arial Narrow"/>
+            <Setter Property="FontSize" Value="18"/>
+            <Setter Property="Height" Value="30" />
+            <Setter Property="Foreground" Value="DarkBlue" />
+        </Style>
+
+        <Style x:Key="wpfStyle3" TargetType="{x:Type ComboBox}">
+            <Setter Property="FontFamily" Value="Arial Narrow"/>
+            <Setter Property="FontSize" Value="18"/>
+            <Setter Property="Foreground" Value="Black" />
+            <Setter Property="Background" Value="Red"/>
+        </Style>
+        <Style x:Key="wpfStyle4" TargetType="{x:Type Button}">
+            <Setter Property="FontFamily" Value="Arial Narrow"/>
+            <Setter Property="FontSize" Value="16"/>
+            <Setter Property="Height" Value="30" />
+            <Setter Property="Foreground" Value="AntiqueWhite" />
+        </Style>
+        <Style x:Key="wpfStyle5" TargetType="{x:Type Label}">
+            <Setter Property="FontFamily" Value="Arial Narrow"/>
+            <Setter Property="FontSize" Value="16"/>
+            <Setter Property="Height" Value="30" />
+            <Setter Property="Foreground" Value="Black" />
+        </Style>
+        <Style x:Key="StackPanel1" TargetType="{x:Type StackPanel}">
+            <Setter Property="Height" Value="35" />
+            <Setter Property="Orientation" Value="Horizontal"/>
+            <Setter Property="Margin" Value="5,1,0,0" />
+            <Setter Property="Height" Value="35" />
+        </Style>
+        </Window.Resources>
+        <StackPanel Background="#FF8FB6B8" >
+        <DockPanel Height="20">
+            <Menu DockPanel.Dock="Top">
+                <MenuItem Header="_Admin">
+                    <MenuItem Header=" _Categories"   Click="Categories_Click" />
+                    <MenuItem Header=" _Emails" Click="Emails_Click" />
+                </MenuItem>
+            </Menu>
+        </DockPanel>
+        <Label FontSize="16" Content="Traffic Signals and Lights" Style="{StaticResource wpfStyle2}" HorizontalAlignment="Left" VerticalAlignment="Top" Width="436" RenderTransformOrigin="0.457,-0.266" Height="29"  FontWeight="Bold" FontFamily="Arial" Margin="10,0,0,0" />
+        <TextBlock TextWrapping="Wrap" Text="*Note if current traffic conditions could cause a hazardous situation. Please contact 911.  If in doubt call 911." Margin="10,0,19,0" FontStyle="Italic" FontSize="14" FontWeight="Bold" Foreground="#FF6E1818" HorizontalAlignment="Center" />
+        <StackPanel Orientation="Horizontal" Margin="5,0" Height="238"  >
+                <StackPanel HorizontalAlignment="Left" Width="364" Margin="0,0,0,10" >
+                    <StackPanel  Margin="5,15,0,0"  Style="{StaticResource StackPanel1}">
+                    <Label Content="Name:" HorizontalContentAlignment="Right" Width="99" Style="{StaticResource wpfStyle5}"   Margin="0,0,0,5" />
+                    <TextBox x:Name="tbName" Style="{StaticResource wpfStyle1}" Width="248"  Margin="2,0,0,5" VerticalContentAlignment="Center" />
+                </StackPanel>
+                    <StackPanel  Style="{StaticResource StackPanel1}">
+                        <Label Content="Email:" HorizontalContentAlignment="Right" Width="100" Style="{StaticResource wpfStyle5}"  Margin="0,0,0,5" />
+                        <TextBox x:Name="tbEmail" Width="248"  Style="{StaticResource wpfStyle1}" Margin="2,0,0,7"    VerticalContentAlignment="Center" />
+                    </StackPanel>
+                    <StackPanel  Style="{StaticResource StackPanel1}">
+                        <Label Content="Telephone:" HorizontalContentAlignment="Right" Width="100" Style="{StaticResource wpfStyle5}"  Margin="0,0,0,5" />
+                        <TextBox x:Name="tbTel" Width="248" Margin="2,0,0,5" Style="{StaticResource wpfStyle1}"  VerticalContentAlignment="Center" Foreground="Black" Background="#FFE6E7EC" />
+                    </StackPanel>
+                    <StackPanel  Style="{StaticResource StackPanel1}" >
+                        <Label Content="Category:" HorizontalContentAlignment="Right" Width="101" Style="{StaticResource wpfStyle5}" />
+                    <ComboBox x:Name="cbSignal" Width="249" Margin="1,2,0,3"  Foreground="Black" Style="{StaticResource wpfStyle3}" BorderBrush="#FFABADB3" Opacity="50" Height="30" Background="#FF478187" VerticalContentAlignment="Center" DropDownClosed="ComboBox_DropDownClosed">
+                            <ComboBox.Resources>
+                                <SolidColorBrush x:Key="{x:Static SystemColors.WindowBrushKey}" Color="#FF478187" />
+                                <SolidColorBrush x:Key="{x:Static SystemColors.HighlightBrushKey}" Color="AntiqueWhite" />
+                            </ComboBox.Resources>
+                        <!--<ComboBoxItem Content="Traffic Signal" />
+                        <ComboBoxItem Content="Street Light" />
+                        <ComboBoxItem Content="Other" />-->
+                    </ComboBox>
+                    </StackPanel>
+                    <StackPanel Style="{StaticResource StackPanel1}">
+                        <Label Content="Type:" HorizontalContentAlignment="Right" Width="101" Style="{StaticResource wpfStyle5}"  Margin="0,0,0,5" />
+                        <ComboBox x:Name="cbSigCat" Width="249" Margin="1,0,145,5"  Foreground="Black"  VerticalContentAlignment="Center">
+                            <ComboBox.Resources>
+                                <SolidColorBrush x:Key="{x:Static SystemColors.WindowBrushKey}" Color="#FF478187" />
+                                <SolidColorBrush x:Key="{x:Static SystemColors.HighlightBrushKey}" Color="AntiqueWhite" />
+                            </ComboBox.Resources>
+                       
+                    </ComboBox>
+                    </StackPanel>
+                    <StackPanel  Style="{StaticResource StackPanel1}" Height="30">
+                        <Label Content="Location:" HorizontalContentAlignment="Right" Width="101" Style="{StaticResource wpfStyle5}"  Margin="0,0,0,5" />
+                        <TextBox x:Name="tbLoc" Width="248" Margin="2,0,0,5" Style="{StaticResource wpfStyle1}"  VerticalContentAlignment="Center" />
+                    </StackPanel>
+                    
+            </StackPanel>
+                <StackPanel  Width="214" Margin="0,10,0,10" >
+                    
+                    <Button Content="Submit" Margin="83,0,26,0" Style="{StaticResource wpfStyle4}" Height="32" Click="Button_Click">
+                        <Button.Background>
+                            <LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
+                                <GradientStop Color="#FF334661" Offset="0.549"/>
+                                <GradientStop Color="#FFCBEEEB"/>
+                                <GradientStop Color="#FF478187" Offset="0.282"/>
+                            </LinearGradientBrush>
+                        </Button.Background>
+                    </Button>
+                    <Button x:Name="btClear" Content="Clear" Margin="83,10,26,0" Style="{StaticResource wpfStyle4}" Height="32" Click="btClear_Click">
+                        <Button.Background>
+                            <LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
+                                <GradientStop Color="#FF334661" Offset="0.549"/>
+                                <GradientStop Color="#FFCBEEEB"/>
+                                <GradientStop Color="#FF478187" Offset="0.282"/>
+                            </LinearGradientBrush>
+                        </Button.Background>
+                    </Button>
+                    <StackPanel >
+                   
+                </StackPanel>
+                </StackPanel>
+
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" Height="116" Margin="5,0" >
+            <Label Content="Issue:" Width="105" HorizontalContentAlignment="Right"   Style="{StaticResource wpfStyle5}" Height="Auto" Margin="5,5,0,62" />
+            <TextBox Width="448" TextWrapping="Wrap" x:Name="tbReq" SpellCheck.IsEnabled="True"  Foreground="Black" FontSize="14" FontFamily="Arial" Margin="1,15,0,15"  Style="{StaticResource wpfStyle1}" Height="Auto" />
+        </StackPanel>
+
+    </StackPanel> 
+        
+  
+</Window>
